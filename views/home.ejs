@@ -1,0 +1,21 @@
+<%- include partials/main/header.ejs %>
+    <%- include partials/main/nav.ejs %>
+
+        <div class="jumbotron">
+            <div class="container text-center">
+                <h1>Welcome to yelp/Skate!</h1>
+                <p class="lead">This application is a quick exercise to illustrate how to utilise NodeJS, Express, EJS, Mongoose and MongoDB
+                    to create a dynamic CRUD app with Authentication using PassportJS.</p>
+
+                <p class="small text-muted">See below for all listed skateparks, otherwise register & login to start adding skateparks to the Database!</p>
+
+                <br>
+
+                <a class="btn btn-lg btn-outline-dark pb-2" href="/register" role="button">Login</a>
+                <a class="btn btn-lg btn-outline-success pb-2" href="/register" role="button">Register</a>
+            </div>
+        </div>
+
+        <%- include partials/dynamic/skateparkList.ejs %>
+
+            <%- include partials/main/footer.ejs %>

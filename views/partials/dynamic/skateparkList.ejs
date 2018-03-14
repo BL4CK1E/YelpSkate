@@ -1,0 +1,47 @@
+<div class="container my-5">
+    <div class="row mb-2">
+        <div class="col-md-6">
+            <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="<%= db.skateparks[1].picture %>" alt="Card image cap">
+                <div class="card-body">
+                    <h3 class="mb-0">
+                        <a class="text-dark" href="#">
+                            <%= db.skateparks[1].city %>
+                        </a>
+                    </h3>
+                    <div class="mb-1 text-muted">
+                        <%= db.skateparks[1].name %>
+                    </div>
+                    <p class="card-text mb-auto">
+                        <%= db.skateparks[1].shortOverview %>
+                    </p>
+                    <a href="https://www.google.com/maps/search/?api=1&<%= db.skateparks[1].streetNumber +  db.skateparks[1].city %>">
+                        Directions
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="<%= db.skateparks[2].picture %>" alt="Card image cap">
+                <div class="card-body">
+                    <h3 class="mb-0">
+                        <a class="text-dark" href="#">
+                            <%= db.skateparks[2].city %>
+                        </a>
+                    </h3>
+                    <div class="mb-1 text-muted">
+                        <%= db.skateparks[2].name %>
+                    </div>
+                    <p class="card-text mb-auto">
+                        <%= db.skateparks[2].shortOverview %>
+                    </p>
+                    <a href="https://www.google.com/maps/search/?api=1&<%= db.skateparks[2].streetNumber +  db.skateparks[2].city %>">
+                        Directions
+                    </a>
+                </div>
+                <div class="card-img-right flex-auto d-none d-md-block" style="background-image: url('<%= db.skateparks[2].picture %>');"></div>
+            </div>
+        </div>
+    </div>
+</div>

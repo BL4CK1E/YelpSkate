@@ -1,0 +1,63 @@
+{
+  "skateparks": {
+    "1": {
+      "name": "Bray Street Skatepark",
+      "city": "Coffs Harbour",
+      "state": "NSW",
+      "streetNumber": "74 Bray Street",
+      "shortOverview":
+        "Small skatepark with Funbox, Ledge, Flatbar and Quarterpipe",
+      "picture":
+        "http://1.bp.blogspot.com/-WwRh_g_M1HI/UDMUCXK145I/AAAAAAAAAFo/bFXSXuAv2Cs/s1600/DSC00079.JPG"
+    },
+    "2": {
+      "name": "Brelsford Park",
+      "city": "Coffs Harbour",
+      "state": "NSW",
+      "streetNumber": "16 Earl Street",
+      "shortOverview":
+        "New complex facility with a full bowl, street section, hips, mini-ramp, euro's, rail's and ledges. There is even a kids / practice section with a long rail, ledges, banks and a quarterpipe.",
+      "picture":
+        "http://payload179.cargocollective.com/1/5/166145/5893473/Enlocus-coffs-harbour-skatepark-08_900.jpg"
+    },
+    "3": {
+      "name": "Toormi Skatepark",
+      "city": "Toormina",
+      "state": "NSW",
+      "streetNumber": "40-44 Minorie Drive",
+      "shortOverview":
+        "Old complex with a rusty bowl, there are a few ledges, rails and stairs, however, they arn't great.",
+      "picture": "https://i.ytimg.com/vi/th-WDakDF_g/maxresdefault.jpg"
+    },
+    "4": {
+      "name": "Corindi Skatepark",
+      "city": "Corindi Beach",
+      "state": "NSW",
+      "streetNumber": "96 Pacific Street",
+      "shortOverview":
+        "Small bowl, with a off to the side street section with a variety of ledges, banks, rails and quarterpipe.",
+      "picture":
+        "http://i0.wp.com/www.hgaads.com/wp-content/uploads/2013/05/placeholder.png?fit=862%2C9999"
+    },
+    "5": {
+      "name": "Macksville Skatepark",
+      "city": "Macksville",
+      "state": "NSW",
+      "streetNumber": "25 Cooper Street",
+      "shortOverview":
+        "Small miniramp, with a decent street section with a variety of ledges, banks, rails and quarterpipe.",
+      "picture":
+        "https://www.skatein.com/admin/wp-content/uploads/2016/12/11224400_602882669814702_7647245988733403648_o-1140x500.jpg"
+    },
+    "6": {
+      "name": "Wooli Skatepark",
+      "city": "Wooli",
+      "state": "NSW",
+      "streetNumber": "89 Carraboi Street",
+      "shortOverview":
+        "A great little street design with great back and forth flow, containing a variety of ledges, banks, rails and quarterpipes.",
+      "picture":
+        "https://media.apnarm.net.au/media/images/2012/06/13/EDE_13-06-2012_EGN_10_GRA080612AHWooliSkate01_fct1024x630_ct677x380.jpg"
+    }
+  }
+}
