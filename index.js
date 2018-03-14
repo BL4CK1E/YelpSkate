@@ -25,7 +25,7 @@ app.get("/", function(req, res) {
   res.render("landingpage");
 });
 
-app.get("/home/", function(req, res) {
+app.get("/home", function(req, res) {
   request("http://api.jsonbin.io/b/5aa97ecb7417a517644f6bc9", function(
     error,
     response,
@@ -34,6 +34,14 @@ app.get("/home/", function(req, res) {
     let parsedBody = JSON.parse(body);
     res.render("home", { db: parsedBody });
   });
+});
+
+app.get("/login", function(req, res) {
+  res.render("login");
+});
+
+app.get("/register", function(req, res) {
+  res.render("register");
 });
 
 //--------------//

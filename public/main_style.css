@@ -13,3 +13,11 @@ div {
   height: 250px;
   object-fit: cover;
 }
+
+.card {
+  min-height: 28em !important;
+}
+
+.container-btn {
+  width: 5em;
+}
