@@ -1,0 +1,26 @@
+<div class="container my-5">
+    <div class="row mb-2">
+        <div class="col-md-12">
+            <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="<%= db.skateparks[1].picture %>" alt="Card image cap">
+                <div class="card-body">
+                    <h3 class="mb-0">
+                        <a class="text-dark" href="#">
+                            <%= db.skateparks[1].city %>
+                        </a>
+                    </h3>
+                    <div class="mb-1 text-muted">
+                        <%= db.skateparks[1].name %>
+                    </div>
+                    <p class="card-text mb-auto">
+                        <%= db.skateparks[1].shortOverview %>
+                    </p>
+                    <a href="https://www.google.com/maps/search/?api=1&<%= db.skateparks[1].streetNumber +  db.skateparks[1].city %>">
+                        Directions
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

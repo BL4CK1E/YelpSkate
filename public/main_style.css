@@ -21,3 +21,9 @@ div {
 .container-btn {
   width: 5em;
 }
+
+#login_container,
+#register_container {
+  margin: auto auto auto auto;
+  width: 25em;
+}
