@@ -1,14 +1,45 @@
 #landing_main {
-  background-image: url("/images/skatepark_landing.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
   min-height: 100vh;
   height: 100%;
   width: 100%;
-  z-index: 9999;
+  overflow: hidden;
 }
 
-#landing_main::before {
+#asc_container {
+  height: 100vh;
+}
+
+#asc_demo {
+  background: url("images/skatepark_landing_demo.jpg");
+  background-position: 20% 0%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 10;
+  transform: scale(1);
+  transition: transform 2s;
+}
+
+#asc_comp {
+  background: url("images/skatepark_landing_comp.jpg");
+  background-position: 10% 0%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 10;
+  transform: scale(1);
+  transition: transform 2s;
+}
+
+#asc_less {
+  background: url("images/skatepark_landing_less.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 10;
+  transform: scale(1);
+  transition: transform 2s;
+}
+
+#asc_demo::before {
   content: "";
   background-color: black;
   opacity: 0.45;
@@ -17,6 +48,32 @@
   position: absolute;
 }
 
-#landing_calltoaction {
-  z-index: 10;
+#asc_comp::before {
+  content: "";
+  background-color: black;
+  opacity: 0.45;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+#asc_less::before {
+  content: "";
+  background-color: black;
+  opacity: 0.45;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+#asc_demo:hover,
+#asc_comp:hover,
+#asc_less:hover {
+  cursor: pointer;
+  transform: scale(1.075);
+}
+
+.asc_calltoaction {
+  position: absolute;
+  z-index: 9999;
 }
