@@ -1,26 +1,56 @@
-<div class="container my-5">
+<div class="container my-1">
+    <h2 class="text-center display-4">
+        <%= db.skateparks[1].name %>
+    </h2>
+    <br>
     <div class="row mb-2">
-        <div class="col-md-12">
-            <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="<%= db.skateparks[1].picture %>" alt="Card image cap">
-                <div class="card-body">
-                    <h3 class="mb-0">
-                        <a class="text-dark" href="#">
-                            <%= db.skateparks[1].city %>
-                        </a>
-                    </h3>
-                    <div class="mb-1 text-muted">
-                        <%= db.skateparks[1].name %>
+        <div class="col-md-8">
+            <div class="asc_card card mb-4">
+                <div class="card-header">
+                    Event Details
+                </div>
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <div>
+                        <strong class="mb-2 card-text mb-auto">
+                            <%= db.skateparks[1].eventDate %>
+                        </strong>
+                        <br>
+                        <strong class="mb-2 card-text mb-auto text-muted">
+                            <%= db.skateparks[1].city %>,
+                                <%= db.skateparks[1].state %>,
+                                    <%= db.skateparks[1].streetNumber %>
+                        </strong>
+                        <br>
+                        <br>
+                        <p class="mb-2 card-text mb-auto">
+                            <%= db.skateparks[1].shortOverview %>
+                        </p>
                     </div>
-                    <p class="card-text mb-auto">
-                        <%= db.skateparks[1].shortOverview %>
-                    </p>
-                    <a href="https://www.google.com/maps/search/?api=1&<%= db.skateparks[1].streetNumber +  db.skateparks[1].city %>">
-                        Directions
-                    </a>
+                    <div>
+                        <a href="/">
+                            <button class="btn btn-md btn-block btn-outline-dark">Visit Website</button>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-
+        <div class="col-md-4">
+            <div class="asc_card card mb-4">
+                <div class="card-header">
+                    Event Poster & Directions
+                </div>
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <div>
+                        <img class="card-img-top" src="<%= db.skateparks[1].picture %>" alt="Card image cap">
+                        <br>
+                    </div>
+                    <div>
+                        <a href="/">
+                            <button class="btn btn-md btn-block btn-outline-dark">Directions</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

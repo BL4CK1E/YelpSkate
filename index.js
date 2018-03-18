@@ -5,17 +5,20 @@
 const express = require("express"),
   app = express();
 const request = require("request");
+const path = require("path");
 
 //-------------//
 //   Servers   //
 //-------------//
 
-app.use(express.static("public"));
+app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
 
 //-------------//
 //     Data    //
 //-------------//
+
+data = "http://api.jsonbin.io/b/5aae3d57aba566611f331b06/2";
 
 //------------//
 //   Routes   //
@@ -23,20 +26,14 @@ app.set("view engine", "ejs");
 
 // Serve landing page
 app.get("/", function(req, res) {
-  res.render("landingpage");
+  res.redirect("/home");
 });
 
 // Serve all events
 app.get("/home", function(req, res) {
-  let parkID = null;
-
-  request("http://api.jsonbin.io/b/5aa97ecb7417a517644f6bc9", function(
-    error,
-    response,
-    body
-  ) {
+  request(data, function(error, response, body) {
     let parsedBody = JSON.parse(body);
-    res.render("home", { db: parsedBody, parkID: parkID });
+    res.render("home", { db: parsedBody });
   });
 });
 
@@ -44,14 +41,9 @@ app.get("/home", function(req, res) {
 app.get("/home/:parkid", function(req, res) {
   let parkID = req.params.parkid;
 
-  request("http://api.jsonbin.io/b/5aa97ecb7417a517644f6bc9", function(
-    error,
-    response,
-    body
-  ) {
+  request(data, function(error, response, body) {
     let parsedBody = JSON.parse(body);
-    console.log(parkID);
-    res.render("home", { db: parsedBody, parkID: parkID });
+    res.render("detailed", { db: parsedBody });
   });
 });
 

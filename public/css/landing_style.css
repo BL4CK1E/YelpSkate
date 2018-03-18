@@ -10,7 +10,7 @@
 }
 
 #asc_demo {
-  background: url("images/skatepark_landing_demo.jpg");
+  background: url("../images/skatepark_landing_demo.jpg");
   background-position: 20% 0%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -20,7 +20,7 @@
 }
 
 #asc_comp {
-  background: url("images/skatepark_landing_comp.jpg");
+  background: url("../images/skatepark_landing_comp.jpg");
   background-position: 10% 0%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -30,7 +30,7 @@
 }
 
 #asc_less {
-  background: url("images/skatepark_landing_less.jpg");
+  background: url("../images/skatepark_landing_less.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

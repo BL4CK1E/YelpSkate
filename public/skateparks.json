@@ -1,63 +1,70 @@
 {
   "skateparks": {
     "1": {
-      "name": "Bray Street Skatepark",
-      "city": "Coffs Harbour",
+      "name": "Skate Titans - Mount Isa",
+      "city": "Mount Isa",
       "state": "NSW",
-      "streetNumber": "74 Bray Street",
+      "streetNumber": "61 Isa Street",
+      "eventDate": "15th April",
       "shortOverview":
-        "Small skatepark with Funbox, Ledge, Flatbar and Quarterpipe",
+        "Skate ipsum dolor sit amet, wall ride carve ho-ho casper slide mute-air spine tic-tac Andy Takakjian. 180 bigspin tuna-flip mute-air nose bump frigid air ollie. Helipop crail slide poseur carve slob air impossible pump. Nosebone hurricane rail slide fakie transfer risers pivot. Ollie dude lip Primo slide boned out bank pool Town & Country. No comply pump finger flip bigspin method air Kris Markovich rail slide bank. Pool risers locals Bullet 66 launch ramp gnarly skate key kingpin. Alley oop Arto Saari coffin bank nose blunt pressure flip hospital flip kickturn.",
       "picture":
-        "http://1.bp.blogspot.com/-WwRh_g_M1HI/UDMUCXK145I/AAAAAAAAAFo/bFXSXuAv2Cs/s1600/DSC00079.JPG"
+        "https://i2.wp.com/australianskateboarding.com/wp-content/uploads/2018/03/SKate-Titans-Mount-ISA-1.jpg?resize=800%2C1132"
     },
     "2": {
-      "name": "Brelsford Park",
-      "city": "Coffs Harbour",
-      "state": "NSW",
-      "streetNumber": "16 Earl Street",
+      "name": "The SA Street Skateboarding Championships",
+      "city": "Seaford",
+      "state": "SA",
+      "streetNumber": "Grand Boulevard",
+      "eventDate": "25th April",
       "shortOverview":
-        "New complex facility with a full bowl, street section, hips, mini-ramp, euro's, rail's and ledges. There is even a kids / practice section with a long rail, ledges, banks and a quarterpipe.",
+        "Kevin Harris kickturn Christ air wheels tic-tac boardslide skate or die. Hurricane dude grab speed wobbles alley oop cess slide skate or die. Bank risers skate key disaster judo air hurricane g-turn. Hurricane disaster mongo half-cab lien air 270. Rip grip Spike Jonze flail stalefish camel back crailtap rail slide. Sketchy yeah Primo slide kickturn g-turn 180. Boned out flail Steve Caballero helipop gnar bucket death box frigid air. Kevin Harris boardslide pivot handplant slob air ollie north. Axle set rails skate or die hand rail nose slide nose grab. Vert mute-air 720 salad grind heel flip boneless. Nose grab pressure flip tail judo air launch ramp finger flip Steve Caballero.",
       "picture":
-        "http://payload179.cargocollective.com/1/5/166145/5893473/Enlocus-coffs-harbour-skatepark-08_900.jpg"
+        "https://i1.wp.com/australianskateboarding.com/wp-content/uploads/2017/09/Skate-Titans-Flagstaff-S.A-v.05-Cameron-Edit-page-001.jpg?resize=724%2C1024"
     },
     "3": {
-      "name": "Toormi Skatepark",
-      "city": "Toormina",
-      "state": "NSW",
-      "streetNumber": "40-44 Minorie Drive",
+      "name": "Skate Titans - Esk",
+      "city": "Esk",
+      "state": "QLD",
+      "streetNumber": "South Street",
+      "eventDate": "6th May",
       "shortOverview":
-        "Old complex with a rusty bowl, there are a few ledges, rails and stairs, however, they arn't great.",
-      "picture": "https://i.ytimg.com/vi/th-WDakDF_g/maxresdefault.jpg"
+        "Skate ipsum dolor sit amet, wall ride carve ho-ho casper slide mute-air spine tic-tac Andy Takakjian. 180 bigspin tuna-flip mute-air nose bump frigid air ollie. Helipop crail slide poseur carve slob air impossible pump. Nosebone hurricane rail slide fakie transfer risers pivot. Ollie dude lip Primo slide boned out bank pool Town & Country. No comply pump finger flip bigspin method air Kris Markovich rail slide bank. Pool risers locals Bullet 66 launch ramp gnarly skate key kingpin. Alley oop Arto Saari coffin bank nose blunt pressure flip hospital flip kickturn.",
+      "picture":
+        "https://i1.wp.com/australianskateboarding.com/wp-content/uploads/2018/01/FInal-Skate-titans-Esk-.jpg?resize=724%2C1024"
     },
     "4": {
-      "name": "Corindi Skatepark",
-      "city": "Corindi Beach",
-      "state": "NSW",
-      "streetNumber": "96 Pacific Street",
+      "name": "Skate Titans - Gold Coast",
+      "city": "Coolangatta",
+      "state": "QLD",
+      "streetNumber": "Coolie Street",
+      "eventDate": "23rd July",
       "shortOverview":
-        "Small bowl, with a off to the side street section with a variety of ledges, banks, rails and quarterpipe.",
+        "Skate ipsum dolor sit amet, wall ride carve ho-ho casper slide mute-air spine tic-tac Andy Takakjian. 180 bigspin tuna-flip mute-air nose bump frigid air ollie. Helipop crail slide poseur carve slob air impossible pump. Nosebone hurricane rail slide fakie transfer risers pivot. Ollie dude lip Primo slide boned out bank pool Town & Country. No comply pump finger flip bigspin method air Kris Markovich rail slide bank. Pool risers locals Bullet 66 launch ramp gnarly skate key kingpin. Alley oop Arto Saari coffin bank nose blunt pressure flip hospital flip kickturn.",
       "picture":
-        "http://i0.wp.com/www.hgaads.com/wp-content/uploads/2013/05/placeholder.png?fit=862%2C9999"
+        "https://d32qys9a6wm9no.cloudfront.net/images/movies/poster/500x735.png"
     },
     "5": {
-      "name": "Macksville Skatepark",
-      "city": "Macksville",
-      "state": "NSW",
-      "streetNumber": "25 Cooper Street",
+      "name": "The QLD Street Skateboarding Championships",
+      "city": "Perth",
+      "state": "WA",
+      "streetNumber": "Kangaroo Street",
+      "eventDate": "15th June",
       "shortOverview":
-        "Small miniramp, with a decent street section with a variety of ledges, banks, rails and quarterpipe.",
+        "Kevin Harris kickturn Christ air wheels tic-tac boardslide skate or die. Hurricane dude grab speed wobbles alley oop cess slide skate or die. Bank risers skate key disaster judo air hurricane g-turn. Hurricane disaster mongo half-cab lien air 270. Rip grip Spike Jonze flail stalefish camel back crailtap rail slide. Sketchy yeah Primo slide kickturn g-turn 180. Boned out flail Steve Caballero helipop gnar bucket death box frigid air. Kevin Harris boardslide pivot handplant slob air ollie north. Axle set rails skate or die hand rail nose slide nose grab. Vert mute-air 720 salad grind heel flip boneless. Nose grab pressure flip tail judo air launch ramp finger flip Steve Caballero.",
       "picture":
-        "https://www.skatein.com/admin/wp-content/uploads/2016/12/11224400_602882669814702_7647245988733403648_o-1140x500.jpg"
+        "https://d32qys9a6wm9no.cloudfront.net/images/movies/poster/500x735.png"
     },
     "6": {
-      "name": "Wooli Skatepark",
-      "city": "Wooli",
+      "name": "Skate Titans - Coffs Harbour",
+      "city": "Coffs Harbour",
       "state": "NSW",
-      "streetNumber": "89 Carraboi Street",
+      "streetNumber": "Little Street",
+      "eventDate": "19th August",
       "shortOverview":
-        "A great little street design with great back and forth flow, containing a variety of ledges, banks, rails and quarterpipes.",
+        "Skate ipsum dolor sit amet, wall ride carve ho-ho casper slide mute-air spine tic-tac Andy Takakjian. 180 bigspin tuna-flip mute-air nose bump frigid air ollie. Helipop crail slide poseur carve slob air impossible pump. Nosebone hurricane rail slide fakie transfer risers pivot. Ollie dude lip Primo slide boned out bank pool Town & Country. No comply pump finger flip bigspin method air Kris Markovich rail slide bank. Pool risers locals Bullet 66 launch ramp gnarly skate key kingpin. Alley oop Arto Saari coffin bank nose blunt pressure flip hospital flip kickturn.",
       "picture":
-        "https://media.apnarm.net.au/media/images/2012/06/13/EDE_13-06-2012_EGN_10_GRA080612AHWooliSkate01_fct1024x630_ct677x380.jpg"
+        "https://d32qys9a6wm9no.cloudfront.net/images/movies/poster/500x735.png"
     }
   }
 }

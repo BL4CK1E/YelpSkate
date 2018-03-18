@@ -7,7 +7,7 @@
                 <p class="lead">This application is a quick exercise to illustrate how to utilise NodeJS, Express, EJS, Mongoose and MongoDB
                     to create a dynamic CRUD app with Authentication using PassportJS.</p>
 
-                <p class="small text-muted">See below for all listed skateparks, otherwise register & login to start adding skateparks to the Database!</p>
+                <p class="small text-muted">See below for all listed skateboarding events, otherwise register & login to start adding events to the Database!</p>
 
                 <br>
 
@@ -16,9 +16,6 @@
             </div>
         </div>
 
-        <% if (parkID == null) { %>
-            <%- include partials/dynamic/skateparkList.ejs %>
-                <%  } else {  %>
-                    <%- include partials/dynamic/skateparkIndividual.ejs %>
-                        <%   }  %>
-                            <%- include partials/main/footer.ejs %>
+        <%- include partials/dynamic/skateparkList.ejs %>
+
+            <%- include partials/main/footer.ejs %>

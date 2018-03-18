@@ -5,8 +5,14 @@ html {
   min-height: 100%;
 }
 
-div {
+/* div {
   border: 0px solid red;
+  color: red !important;
+} */
+
+footer {
+  position: relative;
+  bottom: 0;
 }
 
 .card-img-top {
@@ -14,8 +20,9 @@ div {
   object-fit: cover;
 }
 
-.card {
-  min-height: 28em !important;
+.asc_card {
+  max-height: 30em !important;
+  min-height: 30em !important;
 }
 
 .container-btn {

@@ -1,8 +1,9 @@
 <div class="container my-5">
+    <h2 class="text-center display-4">Other Events</h2>
+    <br>
     <div class="row mb-2">
 
-        <%  for (let i = 1; i < Object.keys(db.skateparks).length; i++) { %>
-
+        <%  for (let i = 1; i < 4; i++) { %>
             <div class="listItem col-md-4">
                 <div class="asc_card card mb-4 box-shadow">
                     <img class="card-img-top" src="<%= db.skateparks[i].picture %>" alt="Card image cap">
