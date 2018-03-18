@@ -43,7 +43,7 @@ app.get("/home/:parkid", function(req, res) {
 
   request(data, function(error, response, body) {
     let parsedBody = JSON.parse(body);
-    res.render("detailed", { db: parsedBody });
+    res.render("detailed", { db: parsedBody, pID: parkID });
   });
 });
 

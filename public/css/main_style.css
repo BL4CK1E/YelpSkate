@@ -21,7 +21,7 @@ footer {
 }
 
 .asc_card {
-  max-height: 30em !important;
+  flex: 1 !important;
   min-height: 30em !important;
 }
 
