@@ -10,9 +10,8 @@ html {
   color: red !important;
 } */
 
-footer {
-  position: relative;
-  bottom: 0;
+footer a {
+  color: inherit;
 }
 
 .card-img-top {
