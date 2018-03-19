@@ -45,6 +45,7 @@ footer a {
   width: 5em;
 }
 
+a,
 .evntr_btn,
 .evntr_btn a,
 .evntr_btn:focus,
@@ -75,4 +76,8 @@ footer a {
 
 #evntr_header {
   height: 35em;
+}
+
+#inputEventOverview {
+  height: 10em;
 }
