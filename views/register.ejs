@@ -1,7 +1,7 @@
 <%- include partials/main/header.ejs %>
     <%- include partials/main/nav.ejs %>
 
-        <div class="jumbotron">
+        <div id="evntr_header" class="d-flex align-items-center">
             <div class="container">
                 <div id="register_container">
                     <form class="form-register">
@@ -17,12 +17,12 @@
                         <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
 
                         <label for="inputPasswordConfirm" class="pt-1 pb-0 mb-0">Confirm Password</label>
-                        <input type="password" id="inputPassword" class="form-control" placeholder="Confirm Password" required>
+                        <input type="passwordConfirm" id="inputPasswordConfirm" class="form-control" placeholder="Confirm Password" required>
                         <br>
                         <button class="btn btn-lg btn-outline-primary btn-block" type="submit">Register</button>
                     </form>
                     <br>
-                    <a href="/home">
+                    <a href="/">
                         <button class="btn btn-lg btn-outline-dark btn-block">Return Home</button>
                     </a>
                 </div>
