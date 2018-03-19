@@ -2,16 +2,32 @@ body,
 html {
   padding: 0;
   margin: 0;
-  min-height: 100%;
+  min-height: 100% !important;
+  height: 100%;
 }
 
-/* div {
-  border: 0px solid red;
-  color: red !important;
-} */
+nav {
+  position: absolute;
+  top: 0;
+}
+
+footer {
+  background-color: #e9ecef;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
 
 footer a {
   color: inherit;
+}
+
+.orange-bg {
+  background-color: #fd7e14;
+}
+
+.evntr_logo {
+  font-family: "Pacifico", cursive;
 }
 
 .card-img-top {
@@ -20,6 +36,7 @@ footer a {
 }
 
 .asc_card {
+  border-radius: 0;
   flex: 1 !important;
   min-height: 30em !important;
 }
@@ -28,8 +45,34 @@ footer a {
   width: 5em;
 }
 
+.evntr_btn,
+.evntr_btn a,
+.evntr_btn:focus,
+.evntr_btn:active {
+  padding: 1em;
+  color: white !important;
+  text-decoration-line: none !important;
+  transition: border-bottom 0.25s;
+  border-bottom: 2px solid rgba(0, 0, 0, 0);
+}
+
+.evntr_btn:hover {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.75);
+}
+
+#evntr_container {
+  min-height: 100%;
+  position: relative;
+  display: block;
+  padding-bottom: 100px;
+}
+
 #login_container,
 #register_container {
   margin: auto auto auto auto;
   width: 25em;
+}
+
+#evntr_header {
+  height: 40em;
 }

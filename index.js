@@ -18,19 +18,19 @@ app.set("view engine", "ejs");
 //     Data    //
 //-------------//
 
-data = "http://api.jsonbin.io/b/5aae3d57aba566611f331b06/2";
+var data = {
+  url: "http://api.jsonbin.io/b/5aaf96abffba176106431d68/latest",
+  headers: {
+    "secret-key": "$2a$10$E7/AKiObcqEM6M4RJl6HeOL7iFL3Qc3eUJ1uNT2cL0D2njNI.8RcG"
+  }
+};
 
 //------------//
 //   Routes   //
 //------------//
 
-// Serve landing page
+// Serve home page and all events
 app.get("/", function(req, res) {
-  res.redirect("/home");
-});
-
-// Serve all events
-app.get("/home", function(req, res) {
   request(data, function(error, response, body) {
     let parsedBody = JSON.parse(body);
     res.render("home", { db: parsedBody });
@@ -55,6 +55,11 @@ app.get("/login", function(req, res) {
 // Serve register page
 app.get("/register", function(req, res) {
   res.render("register");
+});
+
+// Serve addEvent page
+app.get("/addEvent", function(req, res) {
+  res.render("addEvent");
 });
 
 //--------------//

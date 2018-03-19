@@ -1,0 +1,32 @@
+<%- include partials/main/header.ejs %>
+    <%- include partials/main/nav.ejs %>
+
+        <div id="evntr_header" class="d-flex align-items-center" method="GET">
+            <div class="container">
+
+                <div id="login_container" action="/login">
+                    <form class="form-signin">
+                        <h2 class="form-signin-heading text-center">Add Event</h2>
+                        <br>
+                        <label for="inputEmail" class="sr-only">Email address</label>
+                        <input type="email" id="inputEmail" class="form-control" placeholder="Email Address" required>
+                        <label for="inputPassword" class="sr-only">Password</label>
+                        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                        <div class="checkbox my-2">
+                            <label>
+                                <input type="checkbox" value="remember-me"> Remember me
+                            </label>
+                            <br>
+                        </div>
+                        <button class="btn btn-lg btn-outline-primary btn-block" type="submit">Sign in</button>
+                    </form>
+                    <br>
+                    <a href="/">
+                        <button class="btn btn-lg btn-outline-dark btn-block">Return Home</button>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+        <%- include partials/main/footer.ejs %>
