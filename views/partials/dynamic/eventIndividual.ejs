@@ -1,7 +1,7 @@
 <div class="container my-1" style="position:relative;">
-    <Script>
+    <script>
         let pID = pID;
-    </Script>
+    </script>
 
     <h2 class="text-center display-4">
         <%= db.events[pID].name %>
@@ -63,6 +63,18 @@
                             <button class="btn btn-md btn-block btn-outline-dark">Directions</button>
                         </a>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="card mb-4">
+                <div class="card-header">
+                    Admin Panel:
+                </div>
+                <div class="p-2">
+                    <a id="deleteLink" href="/delete/<%=pID%>" onclick="del()">
+                        <button class="btn btn-md btn-block btn-danger">Delete</button>
+                    </a>
                 </div>
             </div>
         </div>

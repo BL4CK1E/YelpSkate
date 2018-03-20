@@ -1,6 +1,6 @@
 {
-  "events": {
-    "001": {
+  "events": [
+    {
       "name": "Event Name",
       "city": "City",
       "state": "State",
@@ -11,7 +11,7 @@
       "picture":
         "https://d32qys9a6wm9no.cloudfront.net/images/movies/poster/500x735.png"
     },
-    "002": {
+    {
       "name": "Event Name",
       "city": "City",
       "state": "State",
@@ -22,7 +22,7 @@
       "picture":
         "https://d32qys9a6wm9no.cloudfront.net/images/movies/poster/500x735.png"
     },
-    "003": {
+    {
       "name": "Event Name",
       "city": "City",
       "state": "State",
@@ -33,7 +33,7 @@
       "picture":
         "https://d32qys9a6wm9no.cloudfront.net/images/movies/poster/500x735.png"
     },
-    "004": {
+    {
       "name": "Event Name",
       "city": "City",
       "state": "State",
@@ -44,7 +44,7 @@
       "picture":
         "https://d32qys9a6wm9no.cloudfront.net/images/movies/poster/500x735.png"
     },
-    "005": {
+    {
       "name": "Event Name",
       "city": "City",
       "state": "State",
@@ -55,7 +55,7 @@
       "picture":
         "https://d32qys9a6wm9no.cloudfront.net/images/movies/poster/500x735.png"
     },
-    "006": {
+    {
       "name": "Event Name",
       "city": "City",
       "state": "State",
@@ -66,5 +66,5 @@
       "picture":
         "https://d32qys9a6wm9no.cloudfront.net/images/movies/poster/500x735.png"
     }
-  }
+  ]
 }
