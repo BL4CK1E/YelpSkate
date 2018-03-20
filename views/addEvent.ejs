@@ -1,31 +1,34 @@
 <%- include partials/main/header.ejs %>
     <%- include partials/main/nav.ejs %>
 
-        <div id="evntr_header" class=" mt-5 d-flex align-items-center" method="GET">
+        <div id="evntr_header" class=" mt-5">
             <div class="container">
 
-                <form class="form-signin" action="/addEvent/*" type="PUT">
-                    <h2 class="form-signin-heading text-center">Add Event</h2>
+                <form class="form-addEvent" name="006" action="/addEvent/submit" method="post">
+                    <h2 class="form-addEvent-heading text-center">Add Event</h2>
 
                     <br>
-                    <label for="inputLocationCity" class="sr-only">Location (City)</label>
-                    <input type="text" id="inputLocationCity" class="form-control" placeholder="Location (City)" required>
-                    <br>
-
-                    <label for="inputEventName" class="sr-only">Event Name</label>
-                    <input type="text" id="inputEventName" class="form-control" placeholder="Event Name" required>
+                    <input type="text" id="inputEventName" class="form-control" name="city" placeholder="Event Name" required>
 
                     <br>
-                    <label for="inputEventOverview" class="sr-only">Event Name</label>
-                    <textarea type="text" id="inputEventOverview" class="form-control" placeholder="Insert Details..." required></textarea>
+                    <div class="form-inline w-100">
+                        <input type="text" id="inputLocationCity" class="form-control col" name="name" placeholder="Location (City)" required>
+                        <input type="text" id="inputLocationState" class="form-control mx-2 col" name="state" placeholder="Location (State)" required>
+                        <input type="text" id="inputLocationStreetNumber" class="form-control col" name="streetNumber" placeholder="Street Number, Name & Type"
+                            required>
+                    </div>
 
                     <br>
-                    <label for="inputPoserURL" class="sr-only">Poster URL</label>
-                    <input type="text" id="inputPoserURL" class="form-control" placeholder="Poster URL" required></input>
+                    <input type="text" id="inputEventDate" class="form-control" name="eventDate" placeholder="DD/MM/YYYY" required>
+
+                    <br>
+                    <textarea type="text" id="inputEventOverview" class="form-control" name="shortOverview" placeholder="Insert Details..." required></textarea>
+
+                    <br>
+                    <input type="text" id="inputPoserURL" class="form-control" name="picture" placeholder="Poster URL" required></input>
 
                     <br>
                     <button class="btn btn-lg btn-outline-primary btn-block" type="submit">Submit Event</button>
-
                 </form>
 
                 <a href="/">
