@@ -8,17 +8,17 @@ This mini CRUD application was originally started as I was browsing the Australi
 
 * Users can register
 * Users can login and authenticate, from there:
-  ..- Users can add new events
-  ..- Users can edit events
-  ..- Users can delete events
-  ....- The above features will be limited to 'Admin' users once security permissions are implemented
-  ..- Users can mark attend on events
-  ....- Once marked, this will show up under their profile in a 'My Events' section.
-  ......- Users can remove their attendance from here.
-  ..- Users can comment on events.
+  * Users can add new events
+  * Users can edit events
+  * Users can delete events
+    * The above features will be limited to 'Admin' users once security permissions are implemented
+  * Users can mark attend on events
+    * Once marked, this will show up under their profile in a 'My Events' section.
+    * Users can remove their attendance from here.
+  * Users can comment on events.
 * Events can be:
-  ..- Given catagories
-  ..- Sorted by catagories & date
+  * Given catagories
+  * Sorted by catagories & date
 
 #### Information To Myself:
 
