@@ -40,6 +40,7 @@ let data = {
 
 request(data, function(error, response, body) {
   parsedBody = JSON.parse(body);
+  console.log(parsedBody);
 });
 
 // This parses all form data, which can then be accesed via 'apt.post' routes
@@ -56,9 +57,7 @@ app.use(
 
 // Serve home page and all events, this is the home page and will serve all event data
 app.get("/", function(req, res) {
-  res.render("home", {
-    db: parsedBody
-  });
+  res.render("home", { db: parsedBody });
 });
 
 // Serve individual event, this will serve detailed data about a selected event
@@ -81,16 +80,12 @@ app.get("/register", function(req, res) {
 });
 
 // Serve addEvent page, this page will allow a user to input a new event
-app.get("/addEvent", function(req, res) {
+app.get("/add", function(req, res) {
   res.render("addEvent");
 });
 
-// --------------//
-//   POST/PUT   //
-// --------------//
-
 // Serve addEvent page
-app.post("/addEvent/submit", function(req, res) {
+app.post("/add/submit", function(req, res) {
   //Push New Object
   parsedBody.events.push(req.body);
   let formData = JSON.stringify(parsedBody);

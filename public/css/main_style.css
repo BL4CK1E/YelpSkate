@@ -22,6 +22,11 @@ footer a {
   color: inherit;
 }
 
+a {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
 .orange-bg {
   background-color: #fd7e14;
 }
@@ -59,6 +64,75 @@ a,
 
 .evntr_btn:hover {
   border-bottom: 2px solid rgba(255, 255, 255, 0.75);
+}
+
+.evntr_card {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  height: 20em;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* .evntr_card:after {
+  content: "";
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.75s;
+}
+
+.evntr_card:hover:after {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.75);
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  transition: background-color 0.75s;
+} */
+
+.evntr_card_date {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: table-cell;
+  padding: 4px;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  transition: background-color 0.75s;
+}
+
+.evntr_card_info {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 4px;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  transition: background-color 0.75s;
+}
+
+.evntr_img_overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.evntr_link_overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.evntr_card_date:hover,
+.evntr_card_info:hover {
+  background-color: rgba(253, 126, 20, 0.75);
+}
+
+.evntr_img_overlay:hover {
+  object-fit: cover;
 }
 
 #evntr_container {
