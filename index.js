@@ -90,9 +90,32 @@ app.get("/addEvent", function (req, res) {
 
 // Serve addEvent page
 app.post("/addEvent/submit", function (req, res) {
+
+  // Produce a new ID for the JSON Object
   let newNum = Object.keys(parsedBody.events).length + 1;
+
+  // Pass in the new JSON Object & turn to string
   parsedBody.events[newNum] = req.body;
+  let formData = JSON.stringify(parsedBody);
+
+  // Send a put request to JSON Bin
+  request.put({
+      url: "http://api.jsonbin.io/b/5aaf96abffba176106431d68",
+      headers: {
+        "secret-key": '$2a$10$E7/AKiObcqEM6M4RJl6HeOL7iFL3Qc3eUJ1uNT2cL0D2njNI.8RcG',
+        "Content-type": 'application/json'
+      },
+      body: formData,
+    },
+    function optionalCallback(err, httpResponse, body) {
+      if (err) {
+        return console.error('upload failed:', err);
+      }
+      console.log('Post Completed, Event: \"' + parsedBody.events[newNum].name + '\" has been posted to the DB!');
+    });
+
   res.redirect("/");
+
 });
 
 //--------------//
