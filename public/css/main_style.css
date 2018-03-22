@@ -25,6 +25,7 @@ footer a {
 a {
   padding: 0 !important;
   margin: 0 !important;
+  text-decoration-line: none !important;
 }
 
 .orange-bg {
@@ -50,14 +51,13 @@ a {
   width: 5em;
 }
 
-a,
 .evntr_btn,
 .evntr_btn a,
 .evntr_btn:focus,
 .evntr_btn:active {
-  padding: 1em;
-  color: white !important;
+  padding: 1em !important;
   text-decoration-line: none !important;
+  color: white !important;
   transition: border-bottom 0.25s;
   border-bottom: 2px solid rgba(0, 0, 0, 0);
 }
@@ -70,26 +70,12 @@ a,
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  height: 20em;
+  width: 280px;
+  height: 25em;
   padding: 0;
   cursor: pointer;
+  z-index: 100;
 }
-
-/* .evntr_card:after {
-  content: "";
-  background-color: rgba(0, 0, 0, 0);
-  transition: background-color 0.75s;
-}
-
-.evntr_card:hover:after {
-  content: "";
-  background-color: rgba(0, 0, 0, 0.75);
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  transition: background-color 0.75s;
-} */
 
 .evntr_card_date {
   position: relative;
@@ -98,9 +84,11 @@ a,
   display: table-cell;
   padding: 4px;
   margin: 0;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.9);
   color: white;
-  transition: background-color 0.75s;
+  transition: background-color 0.5s;
+  border-bottom-right-radius: 1em;
+  z-index: 110;
 }
 
 .evntr_card_info {
@@ -110,7 +98,8 @@ a,
   padding: 4px;
   background: rgba(0, 0, 0, 0.75);
   color: white;
-  transition: background-color 0.75s;
+  transition: background-color 0.5s;
+  z-index: 110;
 }
 
 .evntr_img_overlay {
@@ -124,15 +113,33 @@ a,
   position: absolute;
   width: 100%;
   height: 100%;
+  z-index: 130;
 }
 
-.evntr_card_date:hover,
-.evntr_card_info:hover {
-  background-color: rgba(253, 126, 20, 0.75);
+.evntr_card:hover .evntr_card_date,
+.evntr_card:hover .evntr_card_info {
+  background-color: rgba(253, 126, 20, 1);
 }
 
-.evntr_img_overlay:hover {
-  object-fit: cover;
+.evntr_card::after {
+  content: "";
+  padding-top: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  text-align: center;
+  position: absolute;
+  background: rgba(0, 0, 0, 0);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  transition: background 0.25s;
+}
+
+.evntr_card:hover:after {
+  background: rgba(0, 0, 0, 0.35);
 }
 
 #evntr_container {

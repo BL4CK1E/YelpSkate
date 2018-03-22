@@ -3,7 +3,11 @@ let i;
 let divs = document.getElementsByClassName("shortOverview");
 
 for (i = 0; i < divs.length; i++) {
-  divs[i].innerHTML = divs[i].innerHTML.substring(0, 100) + "...";
+  let desLen = divs[i].innerHTML.length;
+  if (desLen > 100) {
+    divs[i].innerHTML = divs[i].innerHTML.substring(0, 100) + "...";
+  } else {
+  }
 }
 
 // Randomise the event cards for the details page

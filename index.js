@@ -40,7 +40,6 @@ let data = {
 
 request(data, function(error, response, body) {
   parsedBody = JSON.parse(body);
-  console.log(parsedBody);
 });
 
 // This parses all form data, which can then be accesed via 'apt.post' routes
@@ -57,7 +56,9 @@ app.use(
 
 // Serve home page and all events, this is the home page and will serve all event data
 app.get("/", function(req, res) {
-  res.render("home", { db: parsedBody });
+  res.render("home", {
+    db: parsedBody
+  });
 });
 
 // Serve individual event, this will serve detailed data about a selected event
@@ -105,7 +106,7 @@ app.post("/add/submit", function(req, res) {
       if (err) {
         return console.error("upload failed:", err);
       }
-      console.log("Post Completed, Event has been posted to the DB!");
+      console.log("Post completed, event added!");
     }
   );
 
@@ -115,11 +116,13 @@ app.post("/add/submit", function(req, res) {
 app.get("/delete/:pid", function(req, res) {
   let pID = req.params.pid;
 
-  console.log("Event " + parsedBody.events[pID].name + " has been removed!");
-  parsedBody.events.splice(pID, pID++);
+  if (pID === 0) {
+    parsedBody.events.shift();
+  } else {
+    parsedBody.events.splice(pID, pID++);
+  }
   let formData = JSON.stringify(parsedBody);
 
-  // Send a put request to JSON Bin
   request.put(
     {
       url: "https://api.jsonbin.io/b/5ab0a71c5d1dee610789018d",
@@ -134,10 +137,14 @@ app.get("/delete/:pid", function(req, res) {
       if (err) {
         return console.error("upload failed:", err);
       }
-      console.log("Post Completed, Event has been removed from the DB!");
+      console.log("Post completed, event removed!");
     }
   );
 
+  res.redirect("/");
+});
+
+app.get("*", function(req, res) {
   res.redirect("/");
 });
 
@@ -146,5 +153,5 @@ app.get("/delete/:pid", function(req, res) {
 //--------------//
 
 app.listen(3000, function() {
-  console.log("The application is being served on http://localhost:3000");
+  console.log("The application has started at: http://localhost:3000");
 });
