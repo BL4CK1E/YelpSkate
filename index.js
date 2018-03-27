@@ -20,11 +20,11 @@ app.set("view engine", "ejs");
 //   Cust. Functions   //
 //---------------------//
 
-function buildObj(obj1, obj2) {
-  obj1 = '"' + obj1.toString() + '":';
-  obj2 = JSON.stringify(obj2);
-  builtObj = "{" + obj1 + obj2 + "}";
-}
+// function buildObj(obj1, obj2) {
+//   obj1 = '"' + obj1.toString() + '":';
+//   obj2 = JSON.stringify(obj2);
+//   builtObj = "{" + obj1 + obj2 + "}";
+// }
 
 //-------------//
 //     Data    //
@@ -113,16 +113,20 @@ app.post("/add/submit", function(req, res) {
   res.redirect("/");
 });
 
+// Remove Event Route
 app.get("/delete/:pid", function(req, res) {
   let pID = req.params.pid;
 
-  if (pID === 0) {
+  // If first of array, delete otherwhise splice the object
+  if (pID < 1) {
     parsedBody.events.shift();
+    console.log(parsedBody.events);
   } else {
     parsedBody.events.splice(pID, pID++);
   }
   let formData = JSON.stringify(parsedBody);
 
+  // Send new data to JSON Bin
   request.put(
     {
       url: "https://api.jsonbin.io/b/5ab0a71c5d1dee610789018d",
@@ -141,9 +145,11 @@ app.get("/delete/:pid", function(req, res) {
     }
   );
 
+  // Send user back to the home page
   res.redirect("/");
 });
 
+// Catch All
 app.get("*", function(req, res) {
   res.redirect("/");
 });
