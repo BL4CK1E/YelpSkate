@@ -6,6 +6,7 @@ const express = require("express"),
   app = express();
 const bodyParser = require("body-parser");
 const request = require("request");
+const mongoose = require("mongoose");
 const path = require("path");
 const $ = require("jQuery");
 
@@ -16,31 +17,65 @@ const $ = require("jQuery");
 app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
 
-//---------------------//
-//   Cust. Functions   //
-//---------------------//
+//---------------------------//
+//     Database Connector    //
+//---------------------------//
 
-// function buildObj(obj1, obj2) {
-//   obj1 = '"' + obj1.toString() + '":';
-//   obj2 = JSON.stringify(obj2);
-//   builtObj = "{" + obj1 + obj2 + "}";
-// }
+const dbuser = "evntr_db";
+const dbpass = "talke123";
 
-//-------------//
-//     Data    //
-//-------------//
+mongoose.connect(
+  "mongodb://" + dbuser + ":" + dbpass + "@ds125469.mlab.com:25469/evntr"
+);
 
-// This requests data from our temp database and allows us to auth
-let data = {
-  url: "https://api.jsonbin.io/b/5ab0a71c5d1dee610789018d/latest",
-  headers: {
-    "secret-key": "$2a$10$E7/AKiObcqEM6M4RJl6HeOL7iFL3Qc3eUJ1uNT2cL0D2njNI.8RcG"
-  }
-};
+//------------------------//
+//    Database Schemas    //
+//------------------------//
 
-request(data, function(error, response, body) {
-  parsedBody = JSON.parse(body);
+let eventSchema = new mongoose.Schema({
+  name: String,
+  city: String,
+  state: String,
+  streetNumber: String,
+  eventDate: String,
+  shortOverview: String,
+  picture: String
 });
+
+let Event = mongoose.model("Event", eventSchema);
+
+// Event.create(
+//   {
+//     name: "Bowlarama",
+//     city: "Sydney",
+//     state: "NSW",
+//     streetNumber: "Bondi",
+//     eventDate: "25th Apr 2018",
+//     shortOverview:
+//       "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum ",
+//     picture:
+//       "https://skateboarding.transworld.net/wp-content/blogs.dir/440/files/2012/02/Vans-Bowl-Artwork-_FINAL-424x600.jpg"
+//   },
+// function(err, event) {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log(event);
+//   }
+// }
+// );
+let name = "Harbour";
+Event.find({ city: { $regex: name } }, function(err, event) {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log(event);
+  }
+});
+
+//------------------//
+//     Form Data    //
+//------------------//
 
 // This parses all form data, which can then be accesed via 'apt.post' routes
 app.use(bodyParser.json());
