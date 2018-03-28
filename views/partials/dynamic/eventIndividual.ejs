@@ -1,10 +1,7 @@
 <div class="container my-1" style="position:relative;">
-    <script>
-        let pID = pID;
-    </script>
 
     <h2 class="text-center display-4">
-        <%= db.events[pID].name %>
+        <%= db.name %>
     </h2>
     <br>
     <div class="row mb-2">
@@ -19,7 +16,7 @@
                         <br>
                         <light class="mb-2 card-text mb-auto">
                             -
-                            <%= db.events[pID].eventDate %>
+                            <%= db.eventDate %>
                         </light>
                         <br>
                         <br>
@@ -27,9 +24,9 @@
                         <br>
                         <light class="mb-2 card-text mb-auto">
                             -
-                            <%= db.events[pID].city %>,
-                                <%= db.events[pID].state %>,
-                                    <%= db.events[pID].streetNumber %>
+                            <%= db.city %>,
+                                <%= db.state %>,
+                                    <%= db.streetNumber %>
                         </light>
                         <br>
                         <br>
@@ -37,7 +34,7 @@
                         <br>
                         <light class="mb-2 card-text mb-auto">
                             -
-                            <%= db.events[pID].shortOverview %>
+                            <%= db.shortOverview %>
                         </light>
                     </div>
                     <div>
@@ -55,7 +52,7 @@
                 </div>
                 <div class="card-body d-flex flex-column justify-content-between">
                     <div>
-                        <img class="mb-4 card-img" src="<%= db.events[pID].picture %>" alt="Card image cap">
+                        <img class="mb-4 card-img" src="<%= db.picture %>" alt="Card image cap">
 
                     </div>
                     <div>
@@ -72,10 +69,10 @@
                     Admin Panel
                 </div>
                 <div class="p-2">
-                    <a id="deleteLink" href="/delete/<%=pID%>" onclick="del()">
+                    <a id="deleteLink" href="/delete/<%= db._id %>" onclick="del()">
                         <button class="mb-2 btn btn-md btn-block btn-danger">Delete Event</button>
                     </a>
-                    <a id="editLink" href="/edit/<%=pID%>" onclick="del()">
+                    <a id="editLink" href="/edit/<%= db._id %>" onclick="del()">
                         <button class="btn btn-md btn-block btn-warning">Edit Event</button>
                     </a>
                 </div>
