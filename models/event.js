@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const Schema = mongoose.Schema,
+      ObjectID = Schema.Types.ObjectId;
 
 let eventSchema = new Schema({
     name: String,
@@ -8,7 +9,11 @@ let eventSchema = new Schema({
     streetNumber: String,
     eventDate: String,
     shortOverview: String,
-    picture: String
+    picture: String,
+    comments: [{
+      type: ObjectID,
+      ref: "Comment"
+    }] 
   });
 
 Event = mongoose.model("Event", eventSchema);

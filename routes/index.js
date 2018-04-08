@@ -4,11 +4,11 @@ const models = require("../models/");
 
 module.exports = function(app) {
 
-    // Static Serves
+    // Static Server (CSS/JS/IMG Files)
     app.use(express.static('public'));
     app.set("view engine", "ejs");
 
-    // Serve home page and all events, this is the home page and will serve all event data
+    // Serve Home Page
     app.get("/", function(req, res) {
 
         models.eventModel.find({}, function(err, event) {
@@ -24,10 +24,12 @@ module.exports = function(app) {
 
     });
 
+    // Start Server
     app.listen(3000, function() {
         console.log("The application has started at: http://localhost:3000");
     });
 
+    // Require additional routes
     require('./events')(app);
     require('./users')(app);
 

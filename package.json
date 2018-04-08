@@ -657,6 +657,7 @@
       "resolved": "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz",
       "version": "1.0.5"
     },
+    "eslint": "^4.19.1",
     "etag": {
       "integrity": "sha1-Qa4u62XvpiJorr/qg6x9eSmbCIc=",
       "resolved": "https://registry.npmjs.org/etag/-/etag-1.8.1.tgz",

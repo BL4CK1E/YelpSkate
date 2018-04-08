@@ -1,9 +1,8 @@
 
-
-// Middleware & Datebase
+// Require Middleware & Datebase
 const express = require("express"),
   app = express();
 const mongoose = require("./mongoose");
 
-// Routes Folder
+// Require Routes Folder
 require('./routes')(app, express);
