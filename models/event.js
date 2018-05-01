@@ -11,8 +11,9 @@ let eventSchema = new Schema({
     shortOverview: String,
     picture: String,
     comments: [{
-      type: ObjectID,
-      ref: "Comment"
+      _id: ObjectID, 
+      user: String,
+      comment: String
     }] 
   });
 

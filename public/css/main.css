@@ -142,6 +142,10 @@ a {
   background: rgba(0, 0, 0, 0.35);
 }
 
+.comment-img{
+  max-width: 50px;
+}
+
 #evntr_container {
   min-height: 100%;
   position: relative;
@@ -159,6 +163,25 @@ a {
   height: 35em;
 }
 
+#evntr_individual_header{
+  text-shadow: 0px 0px 20px #000;
+}
+
 #inputEventOverview {
   height: 10em;
+}
+
+#adminPanel{
+  display:none;
+}
+
+#event-background{
+  background-size: cover;
+  z-index: 1;
+  border-radius: 0!important;
+}
+
+#event-detailed{
+  position: relative;
+  z-index: 25;
 }

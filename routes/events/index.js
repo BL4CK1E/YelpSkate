@@ -34,7 +34,7 @@ module.exports = function(app, express) {
         console.log(
           "---> Added Event:'" + req.body.name + "' to the database!"
         );
-        res.redirect("/");
+        res.redirect("/view/"+event._id);
       }
     });
   });
@@ -65,7 +65,7 @@ module.exports = function(app, express) {
           console.log(err);
         }
         console.log("---> Made changes to:'" + pID + "' to the database!");
-        res.redirect("/");
+        res.redirect("/view/"+doc._id);
       }
     );
   });
@@ -82,5 +82,7 @@ module.exports = function(app, express) {
       }
     });
   });
+
+  require('./comments')(app);
   
 };
