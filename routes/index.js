@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const models = require("../models/");
+const bin = require("../bin/seed");
 
 module.exports = function(app) {
 
@@ -11,14 +12,11 @@ module.exports = function(app) {
     // Serve Home Page
     app.get("/", function(req, res) {
 
-        models.eventModel.find({}, function(err, event) {
+        models.eventModel.find({}, function(err,event){
             if (err) {
                 console.log(err);
             } else {
-                res.render("home", {
-                db: event
-            });
-
+                res.render("home", {db: event});
             };
         });    
 
@@ -26,6 +24,7 @@ module.exports = function(app) {
 
     // Start Server
     app.listen(3000, function() {
+        bin.seed();
         console.log("The application has started at: http://localhost:3000");
     });
 

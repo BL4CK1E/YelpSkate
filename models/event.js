@@ -10,12 +10,13 @@ let eventSchema = new Schema({
     eventDate: String,
     shortOverview: String,
     picture: String,
-    comments: [{
-      _id: ObjectID, 
-      user: String,
-      comment: String
-    }] 
-  });
+    comments: [
+        {
+          type: ObjectID, 
+          ref: "Comment"
+        }
+      ] 
+    });
 
 Event = mongoose.model("Event", eventSchema);
 

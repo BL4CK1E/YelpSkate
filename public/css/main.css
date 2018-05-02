@@ -179,6 +179,17 @@ a {
   background-size: cover;
   z-index: 1;
   border-radius: 0!important;
+  position: relative;
+}
+
+#event-background::after{
+  content:" ";
+  background: rgba(253, 126, 20, 0.2);
+  top:0;
+  left:0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
 }
 
 #event-detailed{

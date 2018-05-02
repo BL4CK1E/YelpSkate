@@ -9,7 +9,7 @@ module.exports = function(app, express) {
   // Show Individual Event
   app.get("/view/:parkid", function(req, res) {
     let parkID = req.params.parkid;
-    models.eventModel.findOne({ _id: parkID }, function(err, event) {
+    models.eventModel.findOne({ _id: parkID }).populate("comments").exec(function(err, event){
       if (err) {
         console.log(err);
       } else {
