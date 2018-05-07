@@ -1,23 +1,24 @@
-const bodyParser = require("body-parser");
-const models = require("../../../models/");
+const bodyParser   =   require("body-parser");
+const models       =   require("../../../models/");
 
-module.exports = function(app, express) {
+module.exports     =   function(app, express) {
 
-    // Pass form data
-    app.use(bodyParser.json());
-    app.use(bodyParser.urlencoded({ extended: false }));
+    app.post('/comment/:pid', function(req,res){
+        let pID       =   req.params.pid;
+        let comment   =   req.body;
 
-    app.post('/comment/submit/:pid', function(req,res){
-        let pID = req.params.pid;
-        comment = req.body;
-        comment.user = "Admin";
-        models.eventModel.findOneAndUpdate({_id: pID}, {$push: {comments: comment}},function(err, doc) {
-            if (err) {
-              console.log(err);
-            }
-            console.log("---> Made changes to:'" + pID + "' to the database!");
-            res.redirect("/view/"+pID);
-          });
+        models.commentModel.create(comment)
+        .then((comment)=>{
+            return models.eventModel.findOneAndUpdate({_id:pID},{ $push: { comments: comment }}, { upsert: true });
+        })
+        .then((event)=>{
+            console.log("---> Made changes to:'" + event.id + "' to the database!");
+            res.redirect("/view/"+event.id);
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
+
     });
 
 };

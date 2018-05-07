@@ -17,12 +17,13 @@
         </div>
         <div class="col-12">
             <div class="mb-4 p-3">
-                <div class="">
-                    Post A Comment
+                <div class="mb-2">
+                    <strong>Post A Comment</strong>
                 </div>
-                <div class="">
-                    <form class="form-addEventComment" action="/comment/submit/<%= db._id %>" method="POST">
-                        <textarea class="w-100 form-control my-2" name="comment" id="comment" rows="3"></textarea>
+                <div>
+                    <form class="form-addEventComment" action="/comment/<%= db._id %>" method="POST">
+                        <input class="w-100 form-control my-2" type="text" name="author" id="comment" placeholder="Author">
+                        <textarea class="w-100 form-control my-2" name="comment" id="comment" rows="3" placeholder="Comment"></textarea>
                         <button class="mb-2 btn btn-md btn-block btn-outline-dark">Submit Comment</button>
                     </form>
                 </div>

@@ -5,14 +5,20 @@ const models = require("../../models/");
 
 module.exports = function(app) {
 
+    // Register
+    app.get("/register", function(req, res) {
+        res.render("register");   
+    });
+
     // Login
     app.get("/login", function(req, res) {
         res.render("login");   
     });
 
-    // Register
-    app.get("/register", function(req, res) {
-        res.render("register");   
+    //Logout
+    app.get("/logout", function(req, res) {
+        res.render("index");   
     });
+    
 
 }

@@ -2,6 +2,7 @@ const bodyParser = require("body-parser");
 const models = require("../../models/");
 
 module.exports = function(app, express) {
+  
   // Pass form data
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: false }));
