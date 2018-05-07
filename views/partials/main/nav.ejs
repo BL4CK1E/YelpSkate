@@ -6,11 +6,11 @@
             </h1>
         </a>
 
-
         <div>
-            <a class="pb-2 evntr_btn" href="/add" role="button">Add Event</a>
-            <a class="pb-2 evntr_btn" href="/login" role="button">Login</a>
-            <a class="pb-2 evntr_btn" href="/register" role="button">Register</a>
+            <% if (user) { %>
+                <a class="pb-2 evntr_btn" href="/add" role="button">Add Event</a>
+                <a class="pb-2 evntr_btn" href="/logout" role="button">Logout</a>
+            <% } %>
             <a class="pb-2 evntr_btn" href="/" role="button">Contact</a>
         </div>
 

@@ -1,11 +1,14 @@
-const bodyParser   =   require("body-parser");
-const models       =   require("../../../models/");
+const bodyParser   =   require("body-parser"),
+      models       =   require("../../../models/"),
+      isLoggedIn   =   require("../../users/auth").isLoggedIn;
+      
 
 module.exports     =   function(app, express) {
 
-    app.post('/comment/:pid', function(req,res){
-        let pID       =   req.params.pid;
-        let comment   =   req.body;
+    app.post('/comment/:pid', isLoggedIn, function(req,res){
+        let pID        =   req.params.pid;
+        let comment    =   req.body;
+        comment.author =   req.user.username;
 
         models.commentModel.create(comment)
         .then((comment)=>{

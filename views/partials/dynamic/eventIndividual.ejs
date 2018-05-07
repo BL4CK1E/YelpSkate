@@ -31,6 +31,13 @@
                         <light class="mb-2 card-text mb-auto">
                             - <%= db.shortOverview %>
                         </light>
+                        <br>
+                        <br>
+                        <strong>Submitted By:</strong>
+                        <br>
+                        <light class="mb-2 card-text mb-auto">
+                            - <%= db.author %>
+                        </light>
                     </div>
                     <div>
                         <a href="/">
@@ -57,20 +64,22 @@
                 </div>
             </div>
         </div>
-        <div class="col-12" id="adminPanel">
-            <div class="card mb-4">
-                <div class="card-header text-center">
-                    Admin Panel
-                </div>
-                <div class="p-2">
-                    <a id="deleteLink" href="/delete/<%= db._id %>" onclick="del()">
-                        <button class="mb-2 btn btn-md btn-block btn-danger">Delete Event</button>
-                    </a>
-                    <a id="editLink" href="/edit/<%= db._id %>" onclick="del()">
-                        <button class="btn btn-md btn-block btn-warning">Edit Event</button>
-                    </a>
+        <% if (db.author === user.username) { %>
+            <div class="col-12" id="adminPanel">
+                <div class="card mb-4">
+                    <div class="card-header text-center">
+                        Admin Panel
+                    </div>
+                    <div class="p-2">
+                        <a id="deleteLink" href="/delete/<%= db._id %>" onclick="del()">
+                            <button class="mb-2 btn btn-md btn-block btn-danger">Delete Event</button>
+                        </a>
+                        <a id="editLink" href="/edit/<%= db._id %>" onclick="del()">
+                            <button class="btn btn-md btn-block btn-warning">Edit Event</button>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
+        <% } %>
     </div>
 </div>

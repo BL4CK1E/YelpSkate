@@ -3,6 +3,7 @@ const Schema = mongoose.Schema,
       ObjectID = Schema.Types.ObjectId;
 
 let eventSchema = new Schema({
+    author: String,
     name: String,
     city: String,
     state: String,

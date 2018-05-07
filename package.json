@@ -786,6 +786,7 @@
       "version": "2.1.4"
     },
     "express": "^4.16.3",
+    "express-session": "^1.15.6",
     "extend": {
       "integrity": "sha1-p1Xqe8Gt/MWjHOfnYtuq3F5jZEQ=",
       "resolved": "https://registry.npmjs.org/extend/-/extend-3.0.1.tgz",
@@ -2677,6 +2678,9 @@
       "resolved": "https://registry.npmjs.org/pascalcase/-/pascalcase-0.1.1.tgz",
       "version": "0.1.1"
     },
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^5.0.0",
     "path": "^0.12.7",
     "path-dirname": {
       "dev": true,

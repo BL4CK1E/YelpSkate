@@ -146,6 +146,10 @@ a {
   max-width: 50px;
 }
 
+.form-container{
+  max-width: 15em;
+}
+
 #evntr_container {
   min-height: 100%;
   position: relative;
@@ -169,10 +173,6 @@ a {
 
 #inputEventOverview {
   height: 10em;
-}
-
-#adminPanel{
-  display:none;
 }
 
 #event-background{
