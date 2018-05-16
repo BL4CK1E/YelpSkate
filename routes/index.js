@@ -17,10 +17,10 @@ module.exports  =   function(app,express) {
     require('./users/auth')(app);
 
     // Serve Home Page
-    app.get("/", isLoggedIn, function(req, res) {
+    app.get("/", function(req, res) {
         models.eventModel.find({})
         .then((event)=>{
-            res.render("home", {db: event});
+            res.render("index", {db: event});
         })
         .catch((err)=>{
             console.log(err);
