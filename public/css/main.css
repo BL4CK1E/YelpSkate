@@ -8,7 +8,7 @@ html {
 }
 
 nav {
-  position: static;
+  position:absolute!important;
   top: 0;
 }
 
