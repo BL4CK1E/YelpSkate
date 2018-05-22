@@ -30,6 +30,13 @@ a {
   text-decoration-line: none !important;
 }
 
+ul, li{
+  margin:0;
+  padding:0;
+  list-style-type: none;
+}
+
+
 .bg-orange {
   background-color: #fd7e14;
 }
@@ -155,7 +162,7 @@ a {
   min-width: 15em;
   height: 15em;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 115%;
   padding: 0!important;
 }
 
@@ -308,4 +315,58 @@ a {
 #statistics hr {
   background: #e9ecef;
   width: 3em;
+}
+
+#signup-call-to-action {
+  margin: 5em 0;
+}
+
+.signup-cta-btn {
+  background: #fd7e14;
+  padding: 5px 15px;
+  color: #e9ecef;
+  border: 1px solid #fd7e14;
+  border-radius: 5em;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.signup-cta-btn:hover {
+    border: 1px solid #c05f0f;
+    background: #c05f0f;
+}
+
+.signup-cta-btn-opp {
+  background: rgba(255, 255, 255, 0);
+  padding: 5px 15px;
+  color: #fd7e14;
+  border: 1px solid #fd7e14;
+  border-radius: 5em;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.signup-cta-btn-opp:hover {
+    border: 1px solid #c05f0f;
+    color: #fff;
+    background: #c05f0f;
+}
+
+#foot-nav{
+  padding: 4em 0;
+  color: #fff;
+  background:rgba(0, 0, 0, 0.897);
+}
+
+#foot-nav h6 {
+  margin-bottom: 1em;
+}
+
+#foot-nav li {
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+#foot-nav li:hover {
+  color: #fd7e14;
 }
