@@ -2,14 +2,19 @@ body,
 html {
   padding: 0;
   margin: 0;
-  min-height: 100% !important;
-  height: 100%;
   width:100%;
+  min-height: 100%;
+  height: 100%;
+  position: relative;
 }
 
 nav {
   position:absolute!important;
   top: 0;
+}
+
+#navbarDropdownMenuLink::first-letter {
+  text-transform: uppercase;
 }
 
 footer {
@@ -163,7 +168,13 @@ ul, li{
   height: 15em;
   background-repeat: no-repeat;
   background-size: 115%;
+  background-position: center;
   padding: 0!important;
+  transition: all 0.25s;
+}
+
+.event-card:hover {
+  background-size: 120%;
 }
 
 .event-card::before {
@@ -171,7 +182,7 @@ ul, li{
   top: 0; right: 0; left: 0;  bottom: 0;
   position: absolute;
   z-index: 25;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.767) 0%, rgba(0, 0, 0, 0) 25%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.87) 0%, rgba(0, 0, 0, 0) 35%);
 }
 
 .upcoming_event_head {
@@ -370,3 +381,140 @@ ul, li{
 #foot-nav li:hover {
   color: #fd7e14;
 }
+
+/* Login Section */
+
+/* Login Section */
+#login_section{
+  min-height: 10em;
+  width: 18em;
+  justify-content: center;
+}
+
+  #login_img{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  #login_img img{
+    max-width: 150px;
+  }
+
+  #login_section p{
+    color: rgb(108, 120, 136);
+    margin: 0.7em 0 0.4em 0;
+    opacity: 0.9;
+    font-size: 0.85em;
+  }
+
+  #login_section input{
+    min-width: 100%;
+    border-radius: 4px;
+    height: 2.4em;
+    padding-left: 0.5em;
+    outline: none;
+    border: 1px solid lightsteelblue;
+    transition: all 0.25s;
+  }
+
+  #login_section input:focus{
+    border: 2px solid #fd7e14;
+  }
+
+  .p-btn{
+    margin: 1.7em auto;
+    width: 10em;
+    height: 2.4em;
+    border: 1px solid #fd7e14;
+    border-radius: 5em;
+    color: #fd7e14;
+    background: none;
+    cursor: pointer;
+    transition: all 0.25s;
+    z-index: 1;
+  }
+
+  .p-btn-nav{
+    margin: 0 auto;
+    width: 5em;
+    height: 2em;
+    border: 1px solid #fd7e14;
+    border-radius: 5em;
+    color: #fd7e14;
+    background: none;
+    cursor: pointer;
+    transition: all 0.25s;
+    z-index: 1;
+  }
+
+    .p-btn:hover, .p-btn-nav:hover{
+      background: #fd7e14;
+      color: #fff;
+    }
+
+    #login_section a{
+      margin: 0 auto;
+      color: #fd7e14;
+    }
+
+    #alert {
+      font-size: 0.8em;
+    }
+
+
+    /* Search Section */
+
+    #search-section {
+      position: relative;
+      top:0;
+      height: 40vh;
+      background-image: url('https://source.unsplash.com/1600x900/?sport,concert');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    
+    #search-section .hero div {
+      z-index: 100;
+    }
+    
+    #search-section .hero input {
+      margin-top: 1em;
+      height: 2.4em;
+      width: 15em;
+      border: 2px solid #e9ecefaf;
+      font-size: 1.3em;
+      color: #e9ecefaf;
+      padding-left: 1em;
+      background: #e9ecef31;
+      border-radius: 5em;
+      transition: all 0.25s;
+    }
+    
+    #search-section .hero input:focus {
+      border: 2px solid #e9ecef;
+      color: #e9ecef;
+    }
+    
+    #search-section .hero input::placeholder {
+      color: #e9ecefaf
+    }
+    
+    #search-section::after {
+      content: "";
+      top: 0; right: 0; left: 0;  bottom: 0;
+      position: absolute;
+      z-index: 50;
+      background: linear-gradient(140deg, rgba(191, 46, 169, 0.767) 0%, rgba(221, 40, 58, 0.747) 80%);
+    }
+
+    #search{
+      background: #f8f8f8;
+    }
+
+    .search-card {
+      background: #fff;
+      border: 0px solid black;
+      padding: 1em;
+      margin: 0.5em;
+    }

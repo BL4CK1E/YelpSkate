@@ -1,0 +1,19 @@
+<div id="upcoming_event"  class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 pb-3"><h3 class="section-head">Popular Events</h3></div>
+            
+            <% for (let i = 0; i < 3; i++) { %>
+                <% let r = Math.floor((Math.random()*db.length)); %>
+                <div class="event-card col-sm-12 col-md-4" style="background-image:url(<%= db[r].picture %>);">
+                    <p class="upcoming_event_head"> <%= db[r].eventDate %> </p>
+                    <p class="upcoming_event_sub"> <%= db[r].name.substring(0,35) %></p>
+                    <a href="/event/<%= db[r].id %>">
+                        <button class="evntr_opp_btn">Open</button>
+                    </a>
+                </div>
+            <% } %>  
+
+        </div>
+    </div>
+</div>

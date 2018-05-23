@@ -5,13 +5,15 @@ const path          =   require('path'),
       models        =   require("../models/"),
       user          =   models.userModel,
       bin           =   require("../bin/seed"),
-      isLoggedIn    =   require("./users/auth").isLoggedIn;
+      isLoggedIn    =   require("./users/auth").isLoggedIn,
+      flash         =   require("connect-flash");
 
 module.exports  =   function(app,express) {
 
     // Static Server (CSS/JS/IMG Files)
     app.use(express.static('public'));
     app.set("view engine", "ejs");
+    app.use(flash());
 
     // Passport Configuration
     require('./users/auth')(app);
@@ -20,7 +22,7 @@ module.exports  =   function(app,express) {
     app.get("/", function(req, res) {
         models.eventModel.find({})
         .then((event)=>{
-            res.render("index", {db: event});
+            res.render("index", {db: event, page: "/home"});
         })
         .catch((err)=>{
             console.log(err);

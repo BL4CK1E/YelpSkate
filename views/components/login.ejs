@@ -1,0 +1,24 @@
+<div class="container-fluid h-100">
+    <div class="row h-100">
+        <div class="col d-flex justify-content-center align-items-center">
+            <div id="login_section" class="d-flex flex-column">
+                <div id="login_img"><h1 class="mb-3 p-0 evntr_logo text-orange"> evntR.io</h1></div>
+
+                <% if (message.error) { %>
+                    <div class="alert alert-danger" id="alert" role="alert">
+                        <strong>Error: </strong> <%= message.error %>
+                    </div>
+                <% } %>
+
+                <form action="/login" method="POST" class="d-flex justify-content-center flex-column">
+                    <div><p>Username</p><input type="text" name="username" placeholder="Username" required></div>
+                    <div><p>Password</p><input type="password" name="password" placeholder="Password" required></div>
+                    <button class="p-btn">Login</button>
+                    <a href="/register">Need a Login?</a>
+                    <a href="/">Return Home</a>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

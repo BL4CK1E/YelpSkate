@@ -9,6 +9,7 @@ let eventSchema = new Schema({
     state: String,
     streetNumber: String,
     eventDate: String,
+    category: String,
     shortOverview: String,
     picture: String,
     comments: [

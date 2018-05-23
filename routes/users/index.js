@@ -3,13 +3,14 @@ const express       =   require('express'),
       mongoose      =   require('mongoose'),
       models        =   require("../../models/"),
       user          =   models.userModel,
-      passport      =   require("passport");
+      passport      =   require("passport"),
+      flash         =   require("connect-flash");
 
 module.exports = function(app) {
 
     // Get Register Page
     app.get("/register", function(req, res) {
-        res.render("register",{user: req.user});   
+        res.render("index",{user: req.user, page: "/register"});   
     });
 
         // Register New User
@@ -27,13 +28,14 @@ module.exports = function(app) {
 
     // Get Login Page
     app.get("/login", function(req, res) {
-        res.render("login");   
+        res.render("index", {page: "/login", message: req.flash()});
     });
 
         // Login
         app.post("/login", passport.authenticate("local", {
                 successRedirect: "/", 
-                failureRedirect: "/login"
+                failureRedirect: "/login",
+                failureFlash: "Invalid Username Or Password"
             })
             , function(req, res) {
         });

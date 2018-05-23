@@ -4,18 +4,46 @@ const bodyParser    = require("body-parser"),
 
 module.exports      = function(app, express) {
 
+
+
   // Pass form data
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: false }));
 
+  // Find Event(s)
+  app.get("/search", function(req,res) {
+    let searchParam = {};
+    let options = 10;
+
+    let name = req.query.name;
+      if (name) { searchParam.name = {$regex:name} };
+    let category = req.query.category;
+      if (category) { searchParam.category = category };
+
+    let limit = parseInt(req.query.limit);
+      if (limit) {options = limit};
+
+    console.log(searchParam);
+    console.log(options);
+
+    models.eventModel.find(searchParam).limit(options)
+    .then(function(event){
+      res.render("index",{db: event, page: "/search"});
+    })
+    .catch((err)=>{
+      console.log(err);
+    })
+
+  })
+
   // Show Individual Event
-  app.get("/view/:parkid", isLoggedIn, function(req, res) {
-    let parkID = req.params.parkid;
-    models.eventModel.findOne({ _id: parkID }).populate("comments").exec(function(err, event){
+  app.get("/event/:eventid", isLoggedIn, function(req, res) {
+    let eventId = req.params.eventid;
+    models.eventModel.findOne({ _id: eventId }).populate("comments").exec(function(err, event){
       if (err) {
         console.log(err);
       } else {
-        res.render("detailed",{db: event});
+        res.send(event);
       }
     });
   });
@@ -57,6 +85,8 @@ module.exports      = function(app, express) {
 
   });
 
+
+
   // Submit Edited Changes
   app.post("/edit/submit/:pid", isLoggedIn, function(req, res) {
     let pID = req.params.pid;
@@ -77,6 +107,8 @@ module.exports      = function(app, express) {
       }
     );
   });
+
+
 
   // Remove Event Route
   app.get("/delete/:pid", isLoggedIn, function(req, res) {
@@ -99,6 +131,8 @@ module.exports      = function(app, express) {
 
   });
 
+
+  
   require('./comments')(app);
   
 };
