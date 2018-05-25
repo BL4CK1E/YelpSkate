@@ -467,7 +467,7 @@ ul, li{
     #search-section {
       position: relative;
       top:0;
-      height: 40vh;
+      height: 750px;
       background-image: url('https://source.unsplash.com/1600x900/?sport,concert');
       background-position: center;
       background-repeat: no-repeat;

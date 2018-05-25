@@ -10,21 +10,21 @@ module.exports      = function(app, express) {
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: false }));
 
+
+
   // Find Event(s)
   app.get("/search", function(req,res) {
+
     let searchParam = {};
     let options = 10;
 
     let name = req.query.name;
-      if (name) { searchParam.name = {$regex:name} };
     let category = req.query.category;
-      if (category) { searchParam.category = category };
-
     let limit = parseInt(req.query.limit);
-      if (limit) {options = limit};
 
-    console.log(searchParam);
-    console.log(options);
+    if (name) { searchParam.name = {$regex:name} };
+    if (category) { searchParam.category = category };
+    if (limit) {options = limit};
 
     models.eventModel.find(searchParam).limit(options)
     .then(function(event){
@@ -36,44 +36,59 @@ module.exports      = function(app, express) {
 
   })
 
+
+
   // Show Individual Event
-  app.get("/event/:eventid", isLoggedIn, function(req, res) {
-    let eventId = req.params.eventid;
-    models.eventModel.findOne({ _id: eventId }).populate("comments").exec(function(err, event){
+  app.get("/event/:id", isLoggedIn, function(req, res) {
+
+    let id = req.params.id;
+
+    models.eventModel.findOne({ _id: id }).populate("comments").exec(function(err, event){
       if (err) {
         console.log(err);
       } else {
         res.send(event);
       }
     });
+
   });
+
+
 
   // Add Event
-  app.get("/add", isLoggedIn, function(req, res) {
+  app.get("/event/add", isLoggedIn, function(req, res) {
+
     res.render("addEvent",{user: req.user});
+
   });
 
+
+
   // Submit New Event
-  app.post("/add/submit", isLoggedIn, function(req, res) {
+  app.post("/event/add", isLoggedIn, function(req, res) {
+
     req.body.author = req.user.username;
+
     models.eventModel.create(req.body, function(err, event) {
       if (err) {
         console.log(err);
       } else {
-        console.log(
-          "---> Added Event:'" + req.body.name + "' to the database!"
-        );
-        res.redirect("/view/"+event._id);
+        res.redirect("/view/" + event._id);
       }
     });
+
   });
 
+
+
   // Edit Event
-  app.get("/edit/:pid", isLoggedIn, function(req, res) {
-    let pID = req.params.pid;
-    models.eventModel.findOne({ _id: pID }, function(err, event) {
+  app.get("/event/edit/:id", isLoggedIn, function(req, res) {
+
+    let id = req.params.id;
+
+    models.eventModel.findOne({ _id: id }, function(err, event) {
       if(req.user.username !== event.author) {
-        console.log('---> "' + req.user.username + '" is not authorised to edit "' + pID + '"!');
+        console.log('---> "' + req.user.username + '" is not authorised to edit "' + id + '"!');
         return res.redirect("/view/"+event._id);
       } 
         if (err) {
@@ -82,47 +97,50 @@ module.exports      = function(app, express) {
         res.render("editEvent", {db: event});
     });
 
-
   });
 
 
 
   // Submit Edited Changes
-  app.post("/edit/submit/:pid", isLoggedIn, function(req, res) {
-    let pID = req.params.pid;
-    console.log(req.body)
+  app.post("/event/edit/:id", isLoggedIn, function(req, res) {
+
+    let id = req.params.id;
+
     if(req.user.username !== req.body.author) {
-      console.log('---> "' + req.user.username + '" is not authorised to edit "' + pID + '"!');
-      return res.redirect("/view/"+pID);
+      console.log('---> "' + req.user.username + '" is not authorised to edit "' + id + '"!');
+      return res.redirect("/view/"+id);
     };
+
     models.eventModel.findOneAndUpdate(
-      { _id: pID },
+      { _id: id },
       { $set: req.body },
       function(err, doc) {
         if (err) {
           console.log(err);
         }
-        console.log("---> Made changes to:'" + pID + "' to the database!");
+        console.log("---> Made changes to:'" + id + "' to the database!");
         res.redirect("/view/"+doc._id);
       }
     );
+
   });
 
 
 
   // Remove Event Route
-  app.get("/delete/:pid", isLoggedIn, function(req, res) {
+  app.delete("/event/delete/:id", isLoggedIn, function(req, res) {
 
-    let pID = req.params.pid;
-    models.eventModel.findOne({_id: pID })
+    let id = req.params.id;
+
+    models.eventModel.findOne({_id: id })
     .then((event)=>{
       if(req.user.username !== event.author) {
-        console.log('---> "' + req.user.username + '" is not authorised to remove "' + pID + '" from the database!');
+        console.log('---> "' + req.user.username + '" is not authorised to remove "' + id + '" from the database!');
         return res.redirect("/view/"+event._id);
       } else {
-        console.log('---> Removed ID: "' + pID + '" from the database!');
+        console.log('---> Removed ID: "' + id + '" from the database!');
         res.redirect("/")
-        return models.eventModel.remove({ _id: pID }).exec();
+        return models.eventModel.remove({ _id: id }).exec();
       }
     })
     .catch((err)=>{
@@ -132,7 +150,10 @@ module.exports      = function(app, express) {
   });
 
 
-  
+
+  // Comment Module
   require('./comments')(app);
   
+
+
 };

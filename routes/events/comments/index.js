@@ -5,14 +5,16 @@ const bodyParser   =   require("body-parser"),
 
 module.exports     =   function(app, express) {
 
-    app.post('/comment/:pid', isLoggedIn, function(req,res){
-        let pID        =   req.params.pid;
+
+    app.post('/event/comment/:id', isLoggedIn, function(req,res){
+
+        let id        =   req.params.id;
         let comment    =   req.body;
         comment.author =   req.user.username;
 
         models.commentModel.create(comment)
         .then((comment)=>{
-            return models.eventModel.findOneAndUpdate({_id:pID},{ $push: { comments: comment }}, { upsert: true });
+            return models.eventModel.findOneAndUpdate({_id:id},{ $push: { comments: comment }}, { upsert: true });
         })
         .then((event)=>{
             console.log("---> Made changes to:'" + event.id + "' to the database!");
@@ -23,5 +25,7 @@ module.exports     =   function(app, express) {
         })
 
     });
+
+
 
 };
