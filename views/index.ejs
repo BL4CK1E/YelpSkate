@@ -1,13 +1,13 @@
-<%- include components/header %>
-<%- include components/nav %>
+<%- include components/main-header %>
+<%- include components/main-nav %>
 
     <% if (page === "/home") { %>
-        <%- include components/landing %>
-        <%- include components/upcoming_sum %>
-        <%- include components/upcoming_event%>
-        <%- include components/categories%>
-        <%- include components/statistics %>
-        <%- include components/signup-call-to-action %>
+        <%- include components/home-landing %>
+        <%- include components/home-upcoming-sum %>
+        <%- include components/home-upcoming-event%>
+        <%- include components/home-categories%>
+        <%- include components/home-statistics %>
+        <%- include components/home-signup-call-to-action %>
 
     <% } else if (page === "/login") { %>
         <%- include('components/login'); %>
@@ -19,7 +19,10 @@
         <%- include('components/search'); %>
 
     <% } else if (page === "/event") { %>
-        <%- include('components/contact'); %>        
+        <%- include('components/contact'); %> 
+
+    <% } else if (page === "/event/add") { %>
+        <%- include('components/event-add'); %> 
 
     <% } else if (page === "/contact") { %>
         <%- include('components/contact'); %>
@@ -27,7 +30,7 @@
     <% } %>
 
     <% if (page != "/login" && page != "/register") { %>   
-        <%- include components/foot-nav %>
+        <%- include components/main-foot-nav %>
     <% } %>   
 
-<%- include components/footer %>
+<%- include components/main-footer %>

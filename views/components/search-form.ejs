@@ -1,11 +1,22 @@
 <div id="search-form">
     <div class="container">
-        <div class="row d-flex justify-content-center align-items-center">
-            <div class="col-md-12">
-                <input id="name" class="w-25" type="text" placeholder=" Event Name">
-                <input id="category" class="w-25" type="text" placeholder=" Category">
-                <input id="limit" class="w-25" type="text" placeholder=" Search Limit">
-                <button class="p-btn ml-3">Open Event</button>
+        <div class="row d-flex flex-row justify-content-center align-items-center">
+            <div id="search-form" class="col-md-12">
+                <form action="/search" method="get">
+                    <div class="row mx-2">
+                        <div class="search-inputs col-sm-6 col-md-8">
+                            <div class="search-input-name">
+                                Search Keywords
+                            </div>
+                            <div class="search-input">
+                                <input type="text" name="name" placeholder=" Keywords" value="<%= name %>">
+                            </div>
+                        </div>
+                        <div class="search-inputs col-sm-6 col-md-4">
+                            <button>Refine Search</button>
+                        </div>   
+                    </div> 
+                </form>    
             </div>
         </div>
     </div>

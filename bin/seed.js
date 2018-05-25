@@ -4,7 +4,7 @@ const models = require("../models/index");
 const seed = (module.exports = {});
 
 let eventData = [];
-let category = ["concert","sports","theaters","parties","communities","classes"];
+let category = ["concerts","sports","theaters","parties","communities","classes"];
 let date = ["28th May 2018", "4th Jun 2018", "6th Aug 2018", "28th Dec 2018", "13th Jan 2019"];
 
 for (let i = 0; i < 300; i++) {

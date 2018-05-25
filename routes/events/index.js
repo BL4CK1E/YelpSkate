@@ -16,7 +16,7 @@ module.exports      = function(app, express) {
   app.get("/search", function(req,res) {
 
     let searchParam = {};
-    let options = 10;
+    let options = 25;
 
     let name = req.query.name;
     let category = req.query.category;
@@ -28,7 +28,7 @@ module.exports      = function(app, express) {
 
     models.eventModel.find(searchParam).limit(options)
     .then(function(event){
-      res.render("index",{db: event, page: "/search"});
+      res.render("index",{db: event, page: "/search", name , limit: options});
     })
     .catch((err)=>{
       console.log(err);
@@ -39,7 +39,7 @@ module.exports      = function(app, express) {
 
 
   // Show Individual Event
-  app.get("/event/:id", isLoggedIn, function(req, res) {
+  app.get("/event/view/:id", isLoggedIn, function(req, res) {
 
     let id = req.params.id;
 
@@ -58,7 +58,7 @@ module.exports      = function(app, express) {
   // Add Event
   app.get("/event/add", isLoggedIn, function(req, res) {
 
-    res.render("addEvent",{user: req.user});
+    res.render("index", {page: "/event/add"});
 
   });
 
