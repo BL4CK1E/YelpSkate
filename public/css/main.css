@@ -518,12 +518,13 @@ ul, li{
     }
 
     #search{
-      background: #f8f8f8;
+      background: #f6f6f6;
     }
 
     .search-card {
       background: #fff;
-      border: 0px solid black;
+      border: 1px solid #cececeb0;
+      border-radius: 5px;
       padding: 1em;
       margin: 0.5em;
     }
@@ -538,7 +539,7 @@ ul, li{
       padding: 0!important;
     }
 
-    .search-inputs button {
+    .search-card button, .search-inputs button {
       width: 100%;
       height: 3em;
       background: none;
@@ -550,7 +551,7 @@ ul, li{
       transition: all 0.25s;
     }
 
-    .search-inputs button:hover {
+    .search-card button:hover, .search-inputs button:hover {
       background: #fd7e14;
       color: #fff;
     }
@@ -574,3 +575,51 @@ ul, li{
     .search-input input::placeholder, .placeholder {
       font-style: italic;      
     }
+
+/* Event Add Styles */
+
+#event-add-form {
+  margin: 5em 0;
+}
+
+#event-add-form button {
+  width: 100%;
+  height: 3em;
+  background: none;
+  border: 1px solid #fd7e14;
+  border-radius: 4px;
+  color: #fd7e14;
+  margin-top:0.5em;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+#event-add-form button:hover {
+  background: #fd7e14;
+  color: #fff;
+}
+
+#event-add-form, #event-add-form div{
+  width: 100%;
+} 
+
+#event-add-form input, #event-add-form textarea {
+  margin: 0.5em 0;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  border: 1px solid rgb(179, 179, 179);
+  transition: all 0.25s;
+}
+
+#event-add-form-name input, #event-add-form-information textarea {
+  outline: none;
+  width: 100%;
+}
+
+/* #event-add-form-location input, #event-add-form-other input {
+} */
+
+
+#event-add-form input:focus, #event-add-form textarea:focus{
+  border: 1px solid #fd7e14;
+}

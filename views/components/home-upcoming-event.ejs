@@ -8,7 +8,7 @@
                 <div class="event-card col-sm-12 col-md-4" style="background-image:url('<%= db[r].picture %>');">
                     <p class="upcoming_event_head"> <%= db[r].eventDate %> </p>
                     <p class="upcoming_event_sub"> <%= db[r].name.substring(0,35) %></p>
-                    <a href="/event/<%= db[r].id %>">
+                    <a href="/event/view/<%= db[r].id %>">
                         <button class="evntr_opp_btn">Open</button>
                     </a>
                 </div>

@@ -19,7 +19,7 @@ for (let i = 0; i < 300; i++) {
     streetNumber: fake.address.streetAddress(),
     eventDate: date[d],
     category: category[r],
-    shortOverview: fake.lorem.paragraph(),
+    overview: fake.lorem.paragraph(),
     picture:
       "https://source.unsplash.com/1600x900/?"+category[r],
     comments: [],
@@ -35,29 +35,27 @@ let commentData = {
 
 seed.seed = function seed() {
 
-  models.eventModel.remove({}, function(err) {
-    // console.log("---> Event Collection Emptied");
-  });
-  models.commentModel.remove({}, function(err) {
-    // console.log("---> Comment Collection Emptied");
-  });
+  models.eventModel.remove({});
+  models.commentModel.remove({});
 
   eventData.forEach(function(eventData) {
     models.eventModel
       .create(eventData)
       .then(function(data) {
         event = data;
-        // console.log("---> Saved Event: " + event.name);
         return event;
       })
       .then(async function(event) {
-        await models.commentModel.create(commentData, function(err, comment) {
-          event.comments.push(comment);
-          // console.log(
-          //   "---> Created Comment & added this to Event: " + event.name
-          // );
-          event.save();
-        });
+
+        let r = Math.floor((Math.random()*6));
+
+        for (let i = 0; i < r; i++) {
+          await models.commentModel.create(commentData, function(err, comment) {
+            event.comments.push(comment);
+            event.save();
+          });
+        }
+
       })
       .catch(function(err) {
         console.log(err);

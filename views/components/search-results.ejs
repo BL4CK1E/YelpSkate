@@ -1,12 +1,5 @@
 <div id="search">
-    <div id="search-form">
-        <form action="" method="get">
-
-        </form>
-    </div>
-
     <div id="search-results" class="container">
-
         <div class="row py-5">
 
             <% for (let i = 0; i < db.length; i++) { %>
@@ -31,9 +24,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
-                        <a href="/event/<%= db[i].id %>">
-                            <button class="p-btn">Open Event</button>
+                    <div class="col-4 d-flex flex-row align-items-center text-center">
+                        <a class="w-100" href="/event/view/<%= db[i].id %>">
+                            <button class="m-0">Open Event</button>
                         </a>
                     </div>
                 </div>
@@ -41,6 +34,5 @@
             <% } %>
 
         </div>
-
     </div>
-</div>
+</div>    

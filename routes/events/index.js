@@ -39,7 +39,7 @@ module.exports      = function(app, express) {
 
 
   // Show Individual Event
-  app.get("/event/view/:id", isLoggedIn, function(req, res) {
+  app.get("/event/view/:id", function(req, res) {
 
     let id = req.params.id;
 
@@ -47,7 +47,7 @@ module.exports      = function(app, express) {
       if (err) {
         console.log(err);
       } else {
-        res.send(event);
+        res.render("index", {db:event, page: "/event/view"});
       }
     });
 
@@ -73,7 +73,7 @@ module.exports      = function(app, express) {
       if (err) {
         console.log(err);
       } else {
-        res.redirect("/view/" + event._id);
+        res.redirect("/event/view/" + event._id);
       }
     });
 
@@ -149,11 +149,7 @@ module.exports      = function(app, express) {
 
   });
 
-
-
   // Comment Module
   require('./comments')(app);
-  
-
 
 };

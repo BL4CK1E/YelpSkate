@@ -1,0 +1,29 @@
+<div id="event-add-container">
+    <div class="container">
+        <div class="row">
+            <form action="/event/add" id="event-add-form" method="post">
+                <div id="event-add-form-name" class="row">
+                    <input type="text" class="col-12" placeholder="Event Name" name="name">
+                </div>
+                <div id="event-add-form-location" class="row">
+                    <input type="text" class="col-12" placeholder="City" name="city">
+                    <input type="text" class="col-12" placeholder="State" name="state">
+                    <input type="text" class="col-12" placeholder="Street #, Street Name" name="streetNumber">
+                </div>
+                <div id="event-add-form-information" class="row">
+                    <textarea name="overview" class="col-md-12" cols="40" rows="10" placeholder="Overview"></textarea>
+                </div>
+                <div id="event-add-form-other" class="row">
+                    <input type="text" class="col-12" placeholder="Picture" name="picture">
+                    <input type="text" class="col-12" placeholder="Category" name="category">
+                    <input type="text" class="col-12" placeholder="Event Date" name="eventDate">
+                </div>
+                <div class="row">
+                    <div class="col-12 p-0">
+                        <button>Submit Your Event</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
