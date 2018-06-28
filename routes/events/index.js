@@ -6,13 +6,15 @@ module.exports      = function(app, express) {
 
 
 
-  // Pass form data
+  // Parse form data
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: false }));
 
 
 
-  // Find Event(s)
+  // @Router         GET /search
+  // @Description    Displays events based on search paramaters
+  // @Access         Public
   app.get("/search", function(req,res) {
 
     let searchParam = {};
@@ -38,7 +40,9 @@ module.exports      = function(app, express) {
 
 
 
-  // Show Individual Event
+  // @Router         GET /search
+  // @Description    Displays an event in detail
+  // @Access         Public
   app.get("/event/view/:id", function(req, res) {
 
     let id = req.params.id;
@@ -55,7 +59,9 @@ module.exports      = function(app, express) {
 
 
 
-  // Add Event
+  // @Router         GET /event/add
+  // @Description    Displays the add event form
+  // @Access         Logged In User
   app.get("/event/add", isLoggedIn, function(req, res) {
 
     res.render("index", {page: "/event/add"});
@@ -64,7 +70,9 @@ module.exports      = function(app, express) {
 
 
 
-  // Submit New Event
+  // @Router         POST /event/add
+  // @Description    Adds a new event
+  // @Access         Logged In User
   app.post("/event/add", isLoggedIn, function(req, res) {
 
     req.body.author = req.user.username;
@@ -80,8 +88,10 @@ module.exports      = function(app, express) {
   });
 
 
-
-  // Edit Event
+  
+  // @Router         POST /event/add
+  // @Description    Adds a new event
+  // @Access         Logged In User
   app.get("/event/edit/:id", isLoggedIn, function(req, res) {
 
     let id = req.params.id;

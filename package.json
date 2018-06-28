@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "lockfileVersion": 1,
   "requires": true,
+  "scripts": {
+    "startdev": "nodemon index",
+    "start": "node index"
+  },
   "dependencies": {
     "abbrev": {
       "dev": true,

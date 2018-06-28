@@ -10,8 +10,11 @@
                     <input type="text" class="col-12" placeholder="State" name="state">
                     <input type="text" class="col-12" placeholder="Street #, Street Name" name="streetNumber">
                 </div>
-                <div id="event-add-form-information" class="row">
-                    <textarea name="overview" class="col-md-12" cols="40" rows="10" placeholder="Overview"></textarea>
+                <div id="event-add-form-information-editor" contenteditable="true" data-placeholder="Write here the content">
+                    Placeholder Text
+                </div>
+                <div id="event-add-form-information" class="row d-none">
+                    <textarea id="event-add-form-information-textarea" name="overview" class="col-md-12 d-none" cols="40" rows="10" placeholder="Overview"></textarea>
                 </div>
                 <div id="event-add-form-other" class="row">
                     <input type="text" class="col-12" placeholder="Picture" name="picture">
